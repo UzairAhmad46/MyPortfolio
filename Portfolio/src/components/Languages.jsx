@@ -3,6 +3,9 @@ import HTML from "../assets/images/html.png";
 import CSS from "../assets/images/css.jpg";
 import javascript from "../assets/images/javascript.png";
 import ReactJS from "../assets/images/reactjs.png";
+import Tailwind from "../assets/images/tailwind.png";
+import Bootstrap from "../assets/images/boostrap.jpeg";
+import github from "../assets/images/github.png";
 
 const Languages = () => {
   const cardImages = [
@@ -34,6 +37,28 @@ const Languages = () => {
       description:
         "ReactJS is a popular JavaScript library for building user interfaces, especially for single-page applications.",
     },
+    {
+      id: 5,
+      logo: Tailwind,
+      name: "Tailwind",
+      description:
+        "Tailwind CSS is a highly popular utility-first CSS framework designed for rapid UI development. ",
+    },
+
+    {
+      id: 6,
+      logo: Bootstrap,
+      name: "Bootstrap",
+      description:
+        "Bootstrap is a popular CSS framework that simplifies front-end development by offering a collection of pre-designed components . ",
+    },
+    {
+      id: 7,
+      logo: github,
+      name: "github",
+      description:
+        "GitHub is a cloud-based platform that facilitates version control and collaboration, primarily for software development projects. ",
+    },
   ];
 
   return (
@@ -44,7 +69,7 @@ const Languages = () => {
       >
         <div>
           <h1 className="text-3xl font-bold mb-5">Languages</h1>
-          <span className=" font-semibold">Working Languages</span>
+          <span className=" font-semibold">Expirence with these languages</span>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-5">
             {cardImages.map(({ id, logo, name, description }) => (
               <div
@@ -60,7 +85,7 @@ const Languages = () => {
                   <div className="font-bold text-xl mb-2 px-2 text-center mt-2">
                     {name}
                   </div>
-                  <p className="px-2 text-gray-600 text-center overflow-hidden">
+                  <p className="px-2 text-gray-600 text-center ">
                     {description}
                   </p>
                 </div>

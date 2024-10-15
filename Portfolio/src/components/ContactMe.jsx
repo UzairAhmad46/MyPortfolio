@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const ContactMe = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm("service_aa9ehjs", "template_olbixv4", form.current, {
         publicKey: "BDt6dqz7nyRFWCTS5",
@@ -14,15 +14,13 @@ const ContactMe = () => {
       .then(
         () => {
           console.log("SUCCESS!");
+          toast.success("Message sent successfully");
         },
         (error) => {
           console.log("FAILED...", error.text);
+          toast.error("Message not sent");
         }
       );
-  };
-
-  const handleClick = () => {
-    alert("form success full Submited");
   };
 
   return (
@@ -76,10 +74,7 @@ const ContactMe = () => {
                 className="shadow appearance-none border rounded-lx py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
-            <button
-              onClick={handleClick}
-              className="bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300"
-            >
+            <button className="bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300">
               Send
             </button>
           </form>
