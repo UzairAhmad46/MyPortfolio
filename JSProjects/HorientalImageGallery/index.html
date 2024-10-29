@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="gallery-wrap" id="backBtn">
+      <div class="icon-div"></div>
+      <div class="gallery">
+        <div>
+          <span>
+            <img src="./images/1.jpg" alt="" />
+          </span>
+          <span>
+            <img src="/images/2.jpg" alt="" />
+          </span>
+          <span>
+            <img src="/images/2.jpg" alt="" />
+          </span>
+        </div>
+        <div>
+          <span>
+            <img src="/images/2.jpg" alt="" />
+          </span>
+          <span>
+            <img src="/images/2.jpg" alt="" />
+          </span>
+          <span>
+            <img src="/images/2.jpg" alt="" />
+          </span>
+        </div>
+      </div>
+      <div class="icon" id="nextBtn"></div>
+    </div>
+
+    <script>
+      let scroolContainer = document.querySelector(".gallery");
+
+      let backBtn = document.getElementById("backBtn");
+      let nextBtn = document.getElementById("nextBtn");
+
+      scroolContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scroolContainer.scrollLeft += evt.deltay;
+      });
+
+      nextBtn.addEventListener("click", () => {
+        scroolContainer.scrollLeft += 900;
+      });
+
+      backBtn.addEventListener("click", () => {
+        scroolContainer.scrollLeft -= 900;
+      });
+    </script>
+  </body>
+</html>
